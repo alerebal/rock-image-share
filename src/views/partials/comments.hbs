@@ -1,0 +1,30 @@
+
+{{#if sidebar.comments}}
+<div class="card comments">
+    <div class="card-header">
+        <h4><i class="fas fa-comments"></i> Lastest Comments</h4>
+    </div>
+    <div class="comments__body">
+        {{#each sidebar.comments}}
+        <div class="comments__item">
+            <div class="comments__image">
+                <a href="/images/{{image.uniqueId}}">
+                    <img src="{{image.imageUrl}}" >
+                </a>
+            </div>
+            <div class="comments__comment">
+                <blockquote >
+                    <div class="comment">
+                        <p>{{comment}}</p>
+                    </div>
+                    <footer class="blockquote-footer">
+                        <span>{{name}}</span> - 
+                        <span>{{timeago timestamp}}</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/if}}

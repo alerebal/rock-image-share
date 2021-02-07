@@ -1,0 +1,19 @@
+<div class="col-md-4 mx-auto">
+    <div class="card form signin">
+        <div class="card-header">
+            <h3><i class="fas fa-user"></i> Account Login</h3>
+        </div>
+        {{!-- <img src="/img/user2.png" class="img-fluid mx-auto mt-3 user"> --}}
+        <div class="card-body">
+            <form action="/users/signin" method="POST">
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                </div>
+                <button class="btn btn-primary btn-block">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div>

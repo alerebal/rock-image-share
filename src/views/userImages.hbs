@@ -1,0 +1,16 @@
+<div class="imagesContainer">
+    <div class="images">
+    {{#each images}}
+    <div class="image">
+        <p>{{title}}</p>
+        <a href="/images/{{uniqueId}}">
+            <img src="{{imageUrl}}" alt="{{title}}">
+        </a>
+        <button  class="btn-delete" value="{{userId}}" data-id="{{uniqueId}}">
+            <i class="fa fa-times"></i> Delete
+        </button>
+    </div>
+    {{/each}}
+</div>
+</div>
+

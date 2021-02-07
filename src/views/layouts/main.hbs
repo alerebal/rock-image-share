@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImgShare</title>
+    <!-- Bootstrap 4 -->
+{{!--     
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/cosmo/bootstrap.min.css"> --}}
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/60074bb507.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <header>
+            <div class="header">
+                <div class="header__img">
+                </div>
+                <h1 class="header__title">Rock imageShare</h1>
+            </div>
+        </header>
+        <div class="navbar">
+            {{>navigation}}
+        </div>
+        <div class="container main" >
+            <div class="main__content">
+                {{>errors}}
+                {{>messages}}
+                {{>user}}
+                {{{ body }}}
+            </div>
+            <div class="main__sidebar">
+                <div class="main__sidebar__container">
+                {{> stats}}
+                {{> popular}}
+                {{> comments}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Custom Code -->
+    <script src="/public/js/scripts.js"></script>
+</body>
+
+</html>

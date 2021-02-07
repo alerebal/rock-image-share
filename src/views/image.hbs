@@ -1,0 +1,72 @@
+<div class="card imageView">
+  <div class="card-header ">
+    <h3>{{ image.title }}</h3>
+  </div>
+  <div class="imageView__body">
+    <p>{{ image.description }}</p>
+    <div >
+      <img src="{{image.imageUrl}}">
+    </div>
+  </div>
+  <div class="imageView__footer">
+    <button class="imageView__footer__item" id="btn-like" data-id="{{image.uniqueId}}">
+      <i class="fas fa-thumbs-up"></i> Like
+    </button>
+    <p class="imageView__footer__item">
+      <span class="likes-count">{{image.likes}}</span>
+      <i class="fas fa-heart"></i>
+    </p>
+    <p class="imageView__footer__item">
+      <i class="fas fa-eye"></i> <span>{{image.views}}</span>
+    </p>
+    <p class="imageView__footer__item">
+      <i class="far fa-clock"></i>
+      <span>{{timeago image.timestamp}}</span>
+    </p>
+  </div>
+</div>
+
+<!-- COMMENTS -->
+<div class="card img__comments">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h3>Comments</h3>
+    <button class="btn-toggle" id="btn-toggle-comment">
+      <i class="fa fa-comments-o"></i> Post a Comment
+    </button>
+  </div>
+  <div class="img__comments__body">
+    <blockqsecuote id="post-comment" >
+      <form action="/images/{{ image.uniqueId }}/comment" method="POST" class="img__comments__body__form">
+        <div class="form-group">
+          <input type="text" class="form-control" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <textarea name="comment" class="form-control" rows="2" placeholder="Your Comment"></textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success" id="btn-comment">
+            <i class="fa fa-comment"></i> Post
+          </button>
+        </div>
+      </form>
+    </blockqsecuote>
+    <ul class="list-group">
+      {{#each comments}}
+      <li class="img__comments__body__comment">
+          <a href="#" class="col text-center">
+            <img src="http://gravatar.com/avatar/{{gravatar}}?d=monsterid&s=45" />
+          </a>
+          <blockquote class="col">
+            <p class="lead">{{comment}}</p>
+            <footer class="blockquote-footer">
+              {{name}}- {{timeago timestamp}}
+            </footer>
+          </blockquote>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

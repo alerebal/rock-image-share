@@ -1,0 +1,18 @@
+
+{{#if error}}
+<div class="alert error" >
+    <p>{{error}} </p>
+    <button type="button" class="btn-close">
+        <span >X</span>
+    </button>
+</div>
+{{/if}}
+
+{{#each errors}}
+<div class="alert error">
+    {{text}}
+    <button type="button" class="btn-close">
+        <span>X</span>
+    </button>
+</div>
+{{/each}}

@@ -1,0 +1,11 @@
+
+{{#if user}}
+    {{>upload}}
+        {{else}}
+            {{#if registered}}
+                {{>signup}}
+            {{else}}
+                {{>signin}}
+            {{/if}}
+{{/if}}
+

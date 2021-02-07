@@ -1,0 +1,18 @@
+<div class="navbarContainer">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav>
+        <ul class="navbar__list" id="navbar">
+            <li class="navbar__item"><a href="/">Home</a></li>
+            {{#if user}}
+            <li class="navbar__item"><a href="/users/images/{{user.id}}">My images</a></li>
+            <li class="navbar__item"><a href="/users/logout">Log out</a></li>
+            {{else}}
+            <li class="navbar__item"><a href="/users/signin">Log in</a></li>
+            <li class="navbar__item"><a href="/users/signup">Sign up</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+</div>
