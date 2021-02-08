@@ -10,3 +10,5 @@ it with Multer and I send them to Cloudinary.
 
 This project runs on local port 3300.
 It also has local variables for cloudinary and mongo db
+
+I deployed it on Heroku.
